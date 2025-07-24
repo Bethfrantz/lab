@@ -109,12 +109,19 @@ function updateBalanceDisplay() {
     balanceSpan.classList.add('positive');
   }
 }
+function addTransactionToHistory(type, amount){
+  const listItem = document.createElement('li');
+  listItem.textContent = `${type==='deposit' ? 'Deposited' : 'Withdrew'} $${amount.toFixed(2)}`;
+  transactionHistoryList.prepend(listItem);
+}
 
 function deposit() {
   const amount = parseFloat(document.getElementById('amount-input').value);
   if (!isNaN(amount) && amount > 0) {
     balance += amount;
     updateBalanceDisplay();
+    addTransactionToHistory('deposit', amount);
+    amountInput.value = '';//Clear input
     // change the innerHTML of "alert"  ""
   } else {
     alert("Please enter a valid positive amount to deposit.");
@@ -127,6 +134,8 @@ function withdraw() {
   if (!isNaN(amount) && amount > 0) {
     balance -= amount;
     updateBalanceDisplay();
+    addTransactionToHistory('withdrawal', amount);
+    amountInput.value = ''; //Clear input
   } else {
     alert("Please enter a valid positive amount to withdraw.");
   }
