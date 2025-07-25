@@ -82,6 +82,14 @@ function removeLastItem() {
   }
 }
 document.getElementById('remove-item-btn').addEventListener('click', removeLastItem);
+document.addEventListener('DOMContentLoaded', function(){
+  const balanceDisplay = document.getElementById("balance-display");
+  const clearBalanceBtn = document.getElementById("clear-balance-btn")'
+    clearBalanceBtn.addEventListener("click", function(){
+      balanceDisplay.textContent="0.00";
+      alert("Balance has been cleared!");
+    });
+});
 
 
 // === Phase 7: Toggle Dark Mode ===
