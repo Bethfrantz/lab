@@ -25,7 +25,30 @@ input {
 .dark-mode {
   background-color: #121212;
   color: #eee;
+ }
+.dark-mode button {
+  background-color: #363636;
+  color: #ffff;
+  border: 1px solid #555;
 }
+.dark-mode button hover {
+  background-color#555555;
+}
+.dark-mode button: active {
+  back-ground color: #777777;
+  }
+  .dark-mode li {
+    color: #ccc;
+  }
+  .dark-mode li:hover {
+    back-ground-color: #2e2e2e;
+  }
+  .dark-mode li a {
+    color: #809fff;
+  }
+  .dark-mode li a: hover {
+    text-decoration: underline;
+  }
 
 #balance {
   font-weight: bold;
