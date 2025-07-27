@@ -5,7 +5,19 @@ function updateDescription() {
 }
 updateDescription(); // Call once on page load
 
+const amountInput = document.getElementById("amount");
+const amountError = document.getElementById("amountError");
 
+amountInput.addEventListener("input", function () {
+  const amount = parseFloat (amountInput.value);
+
+  if (isNAN(amount) || amount <=0) {
+    amount.Error.textContent = "Please enter a posiive amount.";
+  }
+  else {
+    amount.Error.textContent = "";
+  }
+});
 
 
 // === Phase 2: Greeting with Input ===
